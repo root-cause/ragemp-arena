@@ -1,0 +1,10 @@
+export const LIGHTING_ATLANTIS = 0;
+export const LIGHTING_EVENING = 1;
+export const LIGHTING_HELL = 2;
+export const LIGHTING_MIDDAY = 3;
+export const LIGHTING_MORNING = 4;
+export const LIGHTING_NIGHT = 5;
+export const LIGHTING_SACCHARINE = 6;
+export const LIGHTING_SANDSTORM = 7;
+export const LIGHTING_STORM = 8;
+export const LIGHTING_TOXIC = 9;

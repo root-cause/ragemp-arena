@@ -1,0 +1,16 @@
+{
+  "name": "ragemp-arena",
+  "version": "1.0.0",
+  "description": "A vehicle deathmatch gamemode for RAGE Multiplayer.",
+  "author": "rootcause",
+  "license": "MIT",
+  "scripts": {
+    "bundle-server": "npx esbuild src/serverside/index.js --outfile=dist/packages/arena/index.js --bundle --minify --platform=node --charset=utf8",
+    "bundle-client": "npx esbuild src/clientside/index.js --outfile=dist/client_packages/index.js --bundle --minify --platform=node --charset=utf8"
+  },
+  "devDependencies": {
+    "@ragempcommunity/types-client": "^2.1.8",
+    "@ragempcommunity/types-server": "^2.1.8",
+    "esbuild": "0.23.0"
+  }
+}

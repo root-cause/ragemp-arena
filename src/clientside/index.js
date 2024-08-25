@@ -1,0 +1,9 @@
+import "./systems/arena";
+import "./systems/local-player";
+import "./systems/big-screens";
+import "./systems/blips";
+import "./systems/hud";
+import "./systems/tickers";
+import "./systems/powerups";
+import "./systems/game-pause";
+import "./systems/scoreboard";
