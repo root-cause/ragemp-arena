@@ -1,5 +1,4 @@
 import { DUMMY_TYPE_ARENA } from "../../shared/DummyType";
-import { waitFor } from "../util";
 import { getEntitySetForVariation, getEntitySetForLighting, getTimecycleModifierForLighting } from "../../shared/arena-util";
 
 const ARENA_INTERIOR_HASH = mp.game.joaat("xs_x18_int_01");
@@ -80,7 +79,7 @@ async function init() {
     // load the arena IPL
     if (!mp.game.streaming.isIplActive("xs_arena_interior")) {
         mp.game.streaming.requestIpl("xs_arena_interior");
-        await waitFor(() => mp.game.streaming.isIplActive("xs_arena_interior"));
+        await mp.game.waitForAsync(() => mp.game.streaming.isIplActive("xs_arena_interior"), 5000);
     }
 
     // load the interior
@@ -88,7 +87,7 @@ async function init() {
     if (!mp.game.interior.isReady(interiorId)) {
         mp.game.interior.pinInMemory(interiorId);
 
-        await waitFor(() => mp.game.interior.isReady(interiorId));
+        await mp.game.waitForAsync(() => mp.game.interior.isReady(interiorId), 5000);
 
         mp.game.interior.disable(interiorId, false);
         mp.game.interior.cap(interiorId, false);

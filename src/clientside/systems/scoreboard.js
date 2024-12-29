@@ -1,4 +1,4 @@
-import { waitFor, callScaleformMethod } from "../util";
+import { callScaleformMethod } from "../util";
 
 const NUM_SCOREBOARD_PLAYERS = 10;
 
@@ -8,7 +8,7 @@ let isScoreboardOn = false;
 // loads and sets up the scoreboard scaleform
 async function init() {
     scaleformHandle = mp.game.graphics.requestScaleformMovie("sc_leaderboard");
-    await waitFor(() => mp.game.graphics.hasScaleformMovieLoaded(scaleformHandle));
+    await mp.game.waitForAsync(() => mp.game.graphics.hasScaleformMovieLoaded(scaleformHandle), 5000);
 
     // apply default scoreboard setup
     callScaleformMethod(scaleformHandle, "SET_DISPLAY_TYPE", 1);

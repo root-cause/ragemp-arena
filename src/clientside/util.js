@@ -1,9 +1,3 @@
-export async function waitFor(checkFn, waitMs = 100, maxTries = 50) {
-    for (let i = 0; !checkFn() && i < maxTries; i++) {
-        await mp.game.waitAsync(waitMs);
-    }
-}
-
 export function callScaleformMethod(scaleformHandle, methodName, ...args) {
     if (mp.game.graphics.beginScaleformMovieMethod(scaleformHandle, methodName)) {
         for (const arg of args) {

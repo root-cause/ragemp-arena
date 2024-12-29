@@ -1,7 +1,7 @@
 import { DUMMY_TYPE_ARENA } from "../../shared/DummyType";
 import { getUnixTimestamp } from "../../shared/util";
 import { isBitSet } from "../../shared/bit-util";
-import { callScaleformMethod, waitFor } from "../util";
+import { callScaleformMethod } from "../util";
 import * as PowerUpType from "../../shared/PowerUpType";
 
 const HUD_INDEX_HEALTH = 0;
@@ -35,7 +35,7 @@ function getHudIndexForPowerUp(powerUp) {
 // loads and sets up the hud scaleform
 async function init() {
     scaleformHandle = mp.game.graphics.requestScaleformMovie("power_play_generic");
-    await waitFor(() => mp.game.graphics.hasScaleformMovieLoaded(scaleformHandle));
+    await mp.game.waitForAsync(() => mp.game.graphics.hasScaleformMovieLoaded(scaleformHandle), 5000);
 
     // add local player's color
     callScaleformMethod(scaleformHandle, "ADD_TEAM", 128);
